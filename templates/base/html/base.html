@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Portfolio de un desarrollador backend Python en Madrid."/>
+    <meta name="keywords" content="desarrollador, backend, python, developer, madrid, portfolio, web, automatizar"/>
+    <meta name="author" content="Fernando Arbex Abollado" />
+    <meta name="copyright" content="Fernando Arbex Abollado" />
+    {% load static %}
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}"/>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.2/dist/terminal.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body class="terminal">
+    <div class="container">
+        {% include 'base/html/navbar.html' %}
+        {% block content %}
+        {% endblock %}
+        <footer>
+            <br>
+            <hr>
+            <p>
+                Esta web ha sido creada gracias a la tecnología de 
+                <a href="https://www.djangoproject.com/" target="_blank" rel="noopener noreferer"
+                    >Django</a
+                >
+                y 
+                <a href="https://terminalcss.xyz/" rel="noopener noreferer">Terminal CSS</a>.
+            </p>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    {% block scripts %}
+    {% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+{% extends 'base/html/base.html' %}
+{% load static %}
+
+{% block title %}Sobre mí | Fernando Arbex{% endblock %}
+{% block content %}
+
+<h1>Sobre mí</h1>
+<div class="grid" style="display: grid;grid-gap: 1em;grid-template-rows: auto;grid-template-columns: repeat( auto-fit, minmax(calc(var(--page-width) / 4), 1fr) );">
+    
+    <div>
+        <p>Me llamo Fernando Arbex. Soy un graduado en Administración de Empresas (ADE) y programador desde 2019.</p>
+        <p>Actualmente, dedico todo mi código al desarrollo de back-end y a la automatización de procesos administrativos con Python.</p>
+        <p>Soy un apasionado de los negocios en internet, la tecnología y los ensayos filosóficos (cuanto más denso mejor).</p>
+        <p>Algún día seré una leyenda del rock, escribiré una novela y tendré tiempo de sobra para dedicarlo a mi familia.</p>
+        <p>Si quieres conocerme un poco más, sigue leyendo.</p>
+        
+        <button class="btn btn-default" id="more_about_btn">Cuéntame más</button>
+    </div>
+    
+    <div style="max-width: 300px;">
+        <img src="{% static 'pages/assets/fernando_arbex.jpeg' %}" alt="a pic of me" style="width: 100%; height: auto;"> 
+    </div>
+    
+</div>
+
+
+<div style="display: none;" id="more_about">
+    <div>
+        <br>
+        <h2>Formación universitaria</h2>
+        <p>Cuando terminé el bachillerato, decidí estudiar Publicidad y Marketing en la universidad, atraído por la idea de incluir la creatividad en mi futuro profesional.</p>
+        <p>Para mi sorpresa, entre Publicidad y Marketing, me gustó mucho más la segunda, quedándome siempre con ganas de entender cómo funciona el negocio por dentro, al margen de las piezas publicitarias que hacen las agencias.</p>
+        <p>Ya empezado el segundo año tomé una decisión drástica: estudiaría ADE y haría los dos primeros cursos al mismo tiempo.</p>
+        <p>Así, llegué al tercer curso al mismo tiempo que mi generación. Objetivo cumplido.</p>
+        <p>Por aquel entonces, el departamento de IT de la universidad buscaba becarios, pero ningún alumno de informática estaba interesado. Viendo una gran oportunidad de aprender, me presenté como candidato.</p>
+        <p>Y fue entonces cuando me enamoré de la tecnología.</p>
+        <p>Hubo retos, algo de estrés y muchísimo aprendizaje abriendo, manteniendo y reparando todos esos equipos. Entonces no lo sabía, pero algo dentro de mí despertó en aquellos meses.</p>
+        <p>Tras estas breves (y fructíferas) prácticas, llegó el cuarto curso, que se resume en: estudiar, TFG, prácticas en MAPFRE y graduación.</p>
+    </div>
+    <div>
+        <br>
+        <h2>Vida laboral</h2>
+        <p>Salí al mercado laboral en junio de 2019, y no encontré mi primer trabajo de oficina hasta noviembre del mismo año.</p>
+        <p>Durante ese tiempo planeé mi futuro: aprendí a programar en Python, un poco de finanzas e inversión y me volví ávido consumidor de podcasts de tecnología y negocios.</p>
+        <p>Al empezar a trabajar, ya podía programar "en real" haciendo mis primeros scripts útiles.</p>
+        <p>Pasado el primer año, mis programas ahorraban algo más de una jornada laboral completa al mes, unos 13 días al año.</p>
+        <p>Actualmente, centro mis esfuerzos en perfeccionar mis habilidades como back-end creando aplicaciones web y APIs.</p>
+        <a href="{% url 'projects' %}">Puedes ver mis proyectos aquí.</a>
+    </div>    
+    <div>
+        <br>
+        <h2>Futuro</h2>
+        <p>Como he mencionado al principio, algún día seré una leyenda del rock. Hasta entonces quiero dedicar todo mi tiempo a  diseñar y escribir software útil para las personas que lo utilizan.</p>
+        <p>Porque de eso se trata (pienso yo) el trabajar, en vivir de servir a los demás.</p>
+    </div>
+    <a class="btn btn-default" href="#navbar">Arriba</a>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+    $(document).ready(function() {
+        // Show more-about on button clicked
+        $('#more_about_btn').click(function(){
+            $('#more_about').show()
+            $('#more_about_btn').hide()
+            $('#more_about_btn_hide').show()
+        });
+    });
+</script>
+{% endblock %}
